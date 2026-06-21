@@ -42,9 +42,9 @@ Use a flat `notes/` directory by default.
 ```text
 ckad/
   AGENTS.md
+  course-catalog.md
   notes/
     index.md
-    course-catalog.md
     s02-l005-q001-docker-cri-containerd-dockershim.md
     s02-l005-q002-nerdctl-vs-kubectl.md
     unsorted-q001-pod-vs-container.md
@@ -60,7 +60,7 @@ is available.
 Preferred file:
 
 ```text
-notes/course-catalog.md
+course-catalog.md
 ```
 
 The catalog should list sections and lectures in a simple selectable format.
@@ -76,8 +76,23 @@ The catalog should list sections and lectures in a simple selectable format.
 ```
 
 When lecture context is missing, the AI should first consult
-`notes/course-catalog.md` if it exists. Then it should ask the user to choose
-from likely Section/Lecture options instead of asking them to type full metadata.
+`course-catalog.md` if it exists. The AI should infer likely Section/Lecture
+options from the user's question and the catalog, then ask the user to choose
+from concise options instead of asking them to type full metadata.
+
+Example:
+
+```text
+이 질문은 아래 강의 중 하나로 보입니다.
+1. Section 02 / L002 - Docker-vs-ContainerD
+2. Section 02 / L003 - A note on Docker deprecation
+3. Section 02 / L004 - Recap - Pods
+
+번호로 선택해 주세요. 모르면 제가 가장 가능성 높은 항목으로 기록하겠습니다.
+```
+
+If one option is clearly the best match, the AI may proceed with that inferred
+lecture and mention the inference in the response.
 
 If no catalog exists yet, ask for the minimum useful context:
 
