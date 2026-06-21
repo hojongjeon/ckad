@@ -307,6 +307,31 @@ docs(ckad): add course catalog
 chore(ai): update study guide
 ```
 
+Format:
+
+```text
+type(scope): short summary
+```
+
+Recommended types:
+
+- `docs`: study notes, indexes, course catalog, or other learning documents.
+- `chore`: repository maintenance that does not change study note content.
+
+Recommended scopes:
+
+- `ckad`: CKAD learning content.
+- `ai`: AI workflow, repository guide, templates, or automation rules.
+
+Examples:
+
+- `docs(ckad): add note for pod vs container`
+- `docs(ckad): update course catalog`
+- `chore(ai): update study guide`
+
+Use `docs(ckad)` for normal learning-note changes. Use `chore(ai)` only when
+changing AI operating rules such as `AGENTS.md`.
+
 ## Style
 
 - Write notes primarily in Korean unless the user asks otherwise.
