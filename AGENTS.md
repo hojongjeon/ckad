@@ -167,6 +167,26 @@ Optional sections:
 ## References
 ```
 
+Use `Related Concepts` for concept keywords that help later review and search.
+Keep entries short, such as Kubernetes object names, CLI terms, API fields,
+runtime components, or related mental-model keywords.
+
+```md
+## Related Concepts
+
+- Pod
+- container
+- `ENTRYPOINT`
+- `CMD`
+- kubelet
+```
+
+Use `Connected Notes` only when linking to another existing or planned note that
+should be reviewed together with the current note. Prefer markdown links when
+the target note file already exists. Do not use `Connected Notes` for plain
+course lecture references; put those under `Related Concepts` only if they are
+concept keywords, or omit them.
+
 ## Metadata Format
 
 Keep metadata keys consistent even when values are unknown.

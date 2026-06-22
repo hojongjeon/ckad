@@ -73,28 +73,6 @@ kubelet -> CRI -> containerd -> runc
 
 따라서 dockershim 제거는 Docker로 만든 이미지가 Kubernetes에서 더 이상 동작하지 않는다는 뜻이 아니다. Kubernetes 노드의 컨테이너 실행 경로에서 Docker Engine을 중간 계층으로 사용하지 않는다는 뜻이다.
 
-## Visual Notes
-
-```mermaid
-flowchart TD
-    A["Early Kubernetes"] --> B["kubelet"]
-    B --> C["Docker Engine"]
-    C --> D["containerd"]
-    D --> E["runc"]
-    E --> F["Linux kernel"]
-
-    G["Kubernetes with dockershim"] --> H["kubelet"]
-    H --> I["dockershim"]
-    I --> J["Docker Engine"]
-    J --> K["containerd"]
-    K --> L["runc"]
-
-    M["Current common path"] --> N["kubelet"]
-    N --> O["CRI"]
-    O --> P["containerd or CRI-O"]
-    P --> Q["runc"]
-```
-
 ## CKAD Exam Focus
 
 CKAD에서는 내부 런타임 구현을 깊게 묻기보다는 다음 정도를 구분하면 충분하다.
